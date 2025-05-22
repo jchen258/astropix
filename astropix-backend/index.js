@@ -8,6 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const apodRoutes = require("./routes/apod");
+
+app.use("/apod", apodRoutes);
+
 // Test route
 app.get("/", (req, res) => {
   res.send("Astropix Backend is alive 🚀");
